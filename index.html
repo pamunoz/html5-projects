@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <style>
+      body {background-color: #494847;}
+    </style>
     <meta http-equiv="content-type" content="text/html" charset="utf-8">
     <title>Sample HTML5 favicon File</title>
     <script type="text/javascript">
@@ -103,7 +106,44 @@
 
         // Draw stroked text
         context.font = "16pt Arial";
-        context.strokeText("This is stroked in 16pt Arial...", 330, 80);     
+        context.strokeText("This is stroked in 16pt Arial...", 330, 80);
+
+        // FILL STYLES AND COLORS
+
+        // Set fill color to red
+        context.fillStyle = "red";
+
+        // Draw a red filled rectangle
+        context.fillRect(310, 160, 100, 50);
+
+        // Set stroke color to green
+        context.strokeStyle = "green";
+
+        // Draw a green stroked rectangle
+        context.strokeRect(310, 240, 100, 50);
+
+        // Set fill color to yellow using rgb()
+        context.fillStyle = "rgb(255, 255, 0)";
+
+        // Draw a yellow filled rectangle
+        context.fillRect(420, 160, 100, 50);
+
+        // Set fill color to green with an alpha of 0.6
+        context.fillStyle = "rgba(0, 255, 0, 0.6)";
+
+        // Draw a semi-transparent green filled rectangle
+        context.fillRect(450, 180, 100, 50);
+
+        // TEXTURES
+        // Get a hangle to the image object
+        var fireImage = document.getElementById("fire");
+        var pattern = context.createPattern(fireImage, "repeat");
+
+        // Set fill style to newly created pattern
+        context.fillStyle = pattern;
+
+        // Draw a pattern filled rectangle
+        context.fillRect(420, 240, 130, 50);
 
         //alert("Hello World!");
       }
@@ -113,6 +153,7 @@
     <canvas width="640" height="480" id="testcanvas" style="border: 1px solid black;">
       Your browser does not support HTML5 Canvas. Please shift to a newer browser.
     </canvas>
+    <img src="fire.png" alt="fire-image" id="fire">
 
   </body>
 </html>
