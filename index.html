@@ -6,12 +6,21 @@
     <script type="text/javascript">
     // This function will be called once the page loads completely
       function pageLoaded() {
-        alert("Hello World!");
+
+        // Get a handle to the canvas object
+        var canvas = document.getElementById("testcanvas");
+
+        // Get the 2d context for this canvas
+        var context = canvas.getContext("2d");
+
+        // Our drawing code here ...
+
+        //alert("Hello World!");
       }
     </script>
   </head>
   <body onload="pageLoaded();">
-    <canvas width="640" height="480" id="testcanvas" style="border: 10px solid black;">
+    <canvas width="640" height="480" id="testcanvas" style="border: 1px solid black;">
       Your browser does not support HTML5 Canvas. Please shift to a newer browser.
     </canvas>
 
